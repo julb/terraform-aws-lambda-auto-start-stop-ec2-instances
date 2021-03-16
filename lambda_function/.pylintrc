@@ -1,0 +1,14 @@
+[FORMAT]
+max-line-length=150
+
+[DESIGN]
+max-locals=20
+
+[MASTER]
+ignore=dist-packages
+ignored-modules=boto3
+disable=
+    C0114, # missing-module-docstring
+    R0201, # no-self-use
+    R0903, # too-few-public-methods
+    R0904, # too-many-public-methods
