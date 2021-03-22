@@ -128,6 +128,7 @@ resource "aws_iam_role" "this" {
   count = var.custom_iam_role_arn == null ? 1 : 0
 
   name = "${var.name}IamRole"
+  tags = var.tags
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -153,6 +154,7 @@ resource "aws_lambda_function" "this" {
   runtime          = "python3.8"
   memory_size      = 128
   timeout          = 300
+  tags             = var.tags
 
   environment {
     variables = {
